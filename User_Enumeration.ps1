@@ -5,6 +5,7 @@ $count = 0
 $warning = ""
 $dupeWarn = ""
 $lastUser = ""
+Write-Host "Reading Users." -NoNewLine
 foreach ($line in $String) {
 	$line = $line.trim()
 	$line = $line -split '\s\s+'
@@ -16,8 +17,11 @@ foreach ($line in $String) {
 		if ($user -match " "){
 			$warning = "Warning, some usernames were found to contain spaces"
 		}
-		$user >> usernames.txt
+		Add-Content usernames.txt $user
 		$count = $count + 1
+		if ($count % 1000 -eq 0){
+			Write-Host "." -NoNewLine
+		}
 	}
  }
 echo ""
