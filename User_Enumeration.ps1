@@ -34,3 +34,6 @@ if ($dupeWarn) {
 }
 Write-Output ""
 Write-Host "Number of Users: $count" -foregroundcolor "green"
+Write-Output ""
+Write-Host -NoNewLine "Names saved to "
+Write-Host -NoNewLine "usernames.txt" -foregroundcolor "magenta"
