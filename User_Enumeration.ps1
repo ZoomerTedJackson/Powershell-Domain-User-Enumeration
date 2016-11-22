@@ -1,5 +1,5 @@
 Write-Host -NoNewLine "Reading Users."
-$String = net users
+$String = net users /domain
 $String = $String[6..($String.length-3)]
 [System.Collections.ArrayList]$String = $String
 $count = 0
